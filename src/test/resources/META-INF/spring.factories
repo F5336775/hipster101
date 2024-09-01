@@ -1,0 +1,3 @@
+org.springframework.test.context.ContextCustomizerFactory = org.jhipster101.\
+    health.config.SqlTestContainersSpringContextCustomizerFactory,org.\
+    jhipster101.health.config.TestContainersSpringContextCustomizerFactory
