@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (points(); as pointsRef) {
+      <div>
+        <h2 data-cy="pointsDetailsHeading"><span jhiTranslate="jhipster101App.points.detail.title">Points</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ pointsRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipster101App.points.date">Date</span></dt>
+          <dd>
+            <span>{{ pointsRef.date | formatMediumDate }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipster101App.points.exercise">Exercise</span></dt>
+          <dd>
+            <span>{{ pointsRef.exercise }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipster101App.points.meals">Meals</span></dt>
+          <dd>
+            <span>{{ pointsRef.meals }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipster101App.points.alcohol">Alcohol</span></dt>
+          <dd>
+            <span>{{ pointsRef.alcohol }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipster101App.points.notes">Notes</span></dt>
+          <dd>
+            <span>{{ pointsRef.notes }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipster101App.points.manytoone">Manytoone</span></dt>
+          <dd>
+            <span>{{ pointsRef.manytoone?.login }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/points', pointsRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>
