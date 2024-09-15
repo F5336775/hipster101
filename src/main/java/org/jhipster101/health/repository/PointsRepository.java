@@ -14,8 +14,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface PointsRepository extends JpaRepository<Points, Long> {
-    @Query("select points from Points points where points.manytoone.login = ?#{authentication.name}")
-    List<Points> findByManytooneIsCurrentUser();
+    @Query("select points from Points points where points.user.login = ?#{authentication.name}")
+    List<Points> findByUserIsCurrentUser();
 
     default Optional<Points> findOneWithEagerRelationships(Long id) {
         return this.findOneWithToOneRelationships(id);
@@ -29,15 +29,12 @@ public interface PointsRepository extends JpaRepository<Points, Long> {
         return this.findAllWithToOneRelationships(pageable);
     }
 
-    @Query(
-        value = "select points from Points points left join fetch points.manytoone",
-        countQuery = "select count(points) from Points points"
-    )
+    @Query(value = "select points from Points points left join fetch points.user", countQuery = "select count(points) from Points points")
     Page<Points> findAllWithToOneRelationships(Pageable pageable);
 
-    @Query("select points from Points points left join fetch points.manytoone")
+    @Query("select points from Points points left join fetch points.user")
     List<Points> findAllWithToOneRelationships();
 
-    @Query("select points from Points points left join fetch points.manytoone where points.id =:id")
+    @Query("select points from Points points left join fetch points.user where points.id =:id")
     Optional<Points> findOneWithToOneRelationships(@Param("id") Long id);
 }

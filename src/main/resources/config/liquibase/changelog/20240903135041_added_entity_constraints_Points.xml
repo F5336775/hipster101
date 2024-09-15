@@ -10,9 +10,9 @@
     -->
     <changeSet id="20240903135041-2" author="jhipster">
 
-        <addForeignKeyConstraint baseColumnNames="manytoone_id"
+        <addForeignKeyConstraint baseColumnNames="user_id"
                                  baseTableName="points"
-                                 constraintName="fk_points__manytoone_id"
+                                 constraintName="fk_points__user_id"
                                  referencedColumnNames="id"
                                  referencedTableName="jhi_user"
                                  />

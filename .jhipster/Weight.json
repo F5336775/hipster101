@@ -1,0 +1,31 @@
+{
+  "annotations": {
+    "changelogDate": "20240904053541"
+  },
+  "applications": ["jhipster101"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "datetime",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "weight",
+      "fieldType": "Integer"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Weight",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "manytoone",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

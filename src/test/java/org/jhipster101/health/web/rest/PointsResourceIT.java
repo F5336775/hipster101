@@ -405,7 +405,7 @@ class PointsResourceIT {
         Points partialUpdatedPoints = new Points();
         partialUpdatedPoints.setId(points.getId());
 
-        partialUpdatedPoints.meals(UPDATED_MEALS);
+        partialUpdatedPoints.date(UPDATED_DATE).meals(UPDATED_MEALS).alcohol(UPDATED_ALCOHOL).notes(UPDATED_NOTES);
 
         restPointsMockMvc
             .perform(

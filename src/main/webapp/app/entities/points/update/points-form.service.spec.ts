@@ -25,7 +25,7 @@ describe('Points Form Service', () => {
             meals: expect.any(Object),
             alcohol: expect.any(Object),
             notes: expect.any(Object),
-            manytoone: expect.any(Object),
+            user: expect.any(Object),
           }),
         );
       });
@@ -41,7 +41,7 @@ describe('Points Form Service', () => {
             meals: expect.any(Object),
             alcohol: expect.any(Object),
             notes: expect.any(Object),
-            manytoone: expect.any(Object),
+            user: expect.any(Object),
           }),
         );
       });

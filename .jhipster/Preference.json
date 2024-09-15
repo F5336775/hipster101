@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20240915024010"
+  },
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "weeklyGoal",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMax": "21",
+      "fieldValidateRulesMin": "10"
+    },
+    {
+      "fieldName": "weightUnits",
+      "fieldType": "Units",
+      "fieldValues": "KG,LB"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Preference",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "id": false,
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "preference",
+      "relationshipName": "onetoone",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

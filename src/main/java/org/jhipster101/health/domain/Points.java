@@ -47,7 +47,7 @@ public class Points implements Serializable {
     private String notes;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private User manytoone;
+    private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -129,16 +129,16 @@ public class Points implements Serializable {
         this.notes = notes;
     }
 
-    public User getManytoone() {
-        return this.manytoone;
+    public User getUser() {
+        return this.user;
     }
 
-    public void setManytoone(User user) {
-        this.manytoone = user;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public Points manytoone(User user) {
-        this.setManytoone(user);
+    public Points user(User user) {
+        this.setUser(user);
         return this;
     }
 

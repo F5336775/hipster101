@@ -8,7 +8,7 @@ export interface IPoints {
   meals?: number | null;
   alcohol?: number | null;
   notes?: string | null;
-  manytoone?: Pick<IUser, 'id' | 'login'> | null;
+  user?: Pick<IUser, 'id' | 'login'> | null;
 }
 
 export type NewPoints = Omit<IPoints, 'id'> & { id: null };

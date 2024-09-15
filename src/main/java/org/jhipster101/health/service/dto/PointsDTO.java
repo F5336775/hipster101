@@ -25,7 +25,7 @@ public class PointsDTO implements Serializable {
     @Size(max = 140)
     private String notes;
 
-    private UserDTO manytoone;
+    private UserDTO user;
 
     public Long getId() {
         return id;
@@ -75,12 +75,12 @@ public class PointsDTO implements Serializable {
         this.notes = notes;
     }
 
-    public UserDTO getManytoone() {
-        return manytoone;
+    public UserDTO getUser() {
+        return user;
     }
 
-    public void setManytoone(UserDTO manytoone) {
-        this.manytoone = manytoone;
+    public void setUser(UserDTO user) {
+        this.user = user;
     }
 
     @Override
@@ -114,7 +114,7 @@ public class PointsDTO implements Serializable {
             ", meals=" + getMeals() +
             ", alcohol=" + getAlcohol() +
             ", notes='" + getNotes() + "'" +
-            ", manytoone=" + getManytoone() +
+            ", user=" + getUser() +
             "}";
     }
 }

@@ -1,0 +1,81 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-preferences-heading"
+        data-cy="PreferencesCreateUpdateHeading"
+        jhiTranslate="jhipster101App.preferences.home.createOrEditLabel"
+      >
+        Create or edit a Preferences
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="jhipster101App.preferences.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_weekelygoal" jhiTranslate="jhipster101App.preferences.weekelygoal">Weekelygoal</label>
+          <input
+            type="text"
+            class="form-control"
+            name="weekelygoal"
+            id="field_weekelygoal"
+            data-cy="weekelygoal"
+            formControlName="weekelygoal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_weightunits" jhiTranslate="jhipster101App.preferences.weightunits">Weightunits</label>
+          <input
+            type="text"
+            class="form-control"
+            name="weightunits"
+            id="field_weightunits"
+            data-cy="weightunits"
+            formControlName="weightunits"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_manytoone" jhiTranslate="jhipster101App.preferences.manytoone">Manytoone</label>
+          <select
+            class="form-control"
+            id="field_manytoone"
+            data-cy="manytoone"
+            name="manytoone"
+            formControlName="manytoone"
+            [compareWith]="compareUser"
+          >
+            <option [ngValue]="null"></option>
+            @for (userOption of usersSharedCollection; track $index) {
+              <option [ngValue]="userOption">{{ userOption.login }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

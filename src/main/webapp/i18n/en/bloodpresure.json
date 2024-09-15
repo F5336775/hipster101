@@ -1,0 +1,24 @@
+{
+  "jhipster101App": {
+    "bloodpresure": {
+      "home": {
+        "title": "Bloodpresures",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Bloodpresure",
+        "createOrEditLabel": "Create or edit a Bloodpresure",
+        "search": "Search for Bloodpresure",
+        "notFound": "No Bloodpresures found"
+      },
+      "created": "A new Bloodpresure is created with identifier {{ param }}",
+      "updated": "A Bloodpresure is updated with identifier {{ param }}",
+      "deleted": "A Bloodpresure is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Bloodpresure {{ id }}?"
+      },
+      "detail": {
+        "title": "Bloodpresure"
+      },
+      "id": "ID"
+    }
+  }
+}

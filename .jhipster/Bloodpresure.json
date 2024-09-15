@@ -1,0 +1,11 @@
+{
+  "annotations": {
+    "changelogDate": "20240915025151"
+  },
+  "fields": [],
+  "name": "Bloodpresure",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

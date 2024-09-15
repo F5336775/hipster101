@@ -24,7 +24,7 @@
       "meals": "Meals",
       "alcohol": "Alcohol",
       "notes": "Notes",
-      "manytoone": "Manytoone"
+      "user": "User"
     }
   }
 }

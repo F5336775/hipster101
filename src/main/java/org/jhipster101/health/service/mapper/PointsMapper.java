@@ -11,7 +11,7 @@ import org.mapstruct.*;
  */
 @Mapper(componentModel = "spring")
 public interface PointsMapper extends EntityMapper<PointsDTO, Points> {
-    @Mapping(target = "manytoone", source = "manytoone", qualifiedByName = "userLogin")
+    @Mapping(target = "user", source = "user", qualifiedByName = "userLogin")
     PointsDTO toDto(Points s);
 
     @Named("userLogin")

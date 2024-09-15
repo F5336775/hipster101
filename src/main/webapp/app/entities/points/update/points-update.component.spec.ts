@@ -49,12 +49,12 @@ describe('Points Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call User query and add missing value', () => {
       const points: IPoints = { id: 456 };
-      const manytoone: IUser = { id: 6449 };
-      points.manytoone = manytoone;
+      const user: IUser = { id: 27501 };
+      points.user = user;
 
-      const userCollection: IUser[] = [{ id: 10634 }];
+      const userCollection: IUser[] = [{ id: 14581 }];
       jest.spyOn(userService, 'query').mockReturnValue(of(new HttpResponse({ body: userCollection })));
-      const additionalUsers = [manytoone];
+      const additionalUsers = [user];
       const expectedCollection: IUser[] = [...additionalUsers, ...userCollection];
       jest.spyOn(userService, 'addUserToCollectionIfMissing').mockReturnValue(expectedCollection);
 
@@ -71,13 +71,13 @@ describe('Points Management Update Component', () => {
 
     it('Should update editForm', () => {
       const points: IPoints = { id: 456 };
-      const manytoone: IUser = { id: 16864 };
-      points.manytoone = manytoone;
+      const user: IUser = { id: 30940 };
+      points.user = user;
 
       activatedRoute.data = of({ points });
       comp.ngOnInit();
 
-      expect(comp.usersSharedCollection).toContain(manytoone);
+      expect(comp.usersSharedCollection).toContain(user);
       expect(comp.points).toEqual(points);
     });
   });

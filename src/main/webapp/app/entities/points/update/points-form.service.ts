@@ -23,7 +23,7 @@ type PointsFormGroupContent = {
   meals: FormControl<IPoints['meals']>;
   alcohol: FormControl<IPoints['alcohol']>;
   notes: FormControl<IPoints['notes']>;
-  manytoone: FormControl<IPoints['manytoone']>;
+  user: FormControl<IPoints['user']>;
 };
 
 export type PointsFormGroup = FormGroup<PointsFormGroupContent>;
@@ -52,7 +52,7 @@ export class PointsFormService {
       notes: new FormControl(pointsRawValue.notes, {
         validators: [Validators.maxLength(140)],
       }),
-      manytoone: new FormControl(pointsRawValue.manytoone),
+      user: new FormControl(pointsRawValue.user),
     });
   }
 

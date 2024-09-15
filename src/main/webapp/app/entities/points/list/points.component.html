@@ -104,9 +104,9 @@
                 }
               </div>
             </th>
-            <th scope="col" jhiSortBy="manytoone.login">
+            <th scope="col" jhiSortBy="user.login">
               <div class="d-flex">
-                <span jhiTranslate="jhipster101App.points.manytoone">Manytoone</span>
+                <span jhiTranslate="jhipster101App.points.user">User</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
@@ -125,7 +125,7 @@
               <td>{{ points.alcohol }}</td>
               <td>{{ points.notes }}</td>
               <td>
-                {{ points.manytoone?.login }}
+                {{ points.user?.login }}
               </td>
               <td class="text-end">
                 <div class="btn-group">

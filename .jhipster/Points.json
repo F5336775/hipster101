@@ -2,6 +2,7 @@
   "annotations": {
     "changelogDate": "20240903135041"
   },
+  "applications": ["jhipster101"],
   "dto": "mapstruct",
   "fields": [
     {
@@ -28,16 +29,13 @@
       "fieldValidateRulesMaxlength": "140"
     }
   ],
-  "jpaMetamodelFiltering": false,
   "name": "Points",
   "pagination": "pagination",
-  "readOnly": false,
   "relationships": [
     {
       "otherEntityField": "login",
       "otherEntityName": "user",
-      "otherEntityRelationshipName": "onetomany",
-      "relationshipName": "manytoone",
+      "relationshipName": "user",
       "relationshipSide": "left",
       "relationshipType": "many-to-one"
     }

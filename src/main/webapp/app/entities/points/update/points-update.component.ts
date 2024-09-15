@@ -83,14 +83,14 @@ export class PointsUpdateComponent implements OnInit {
     this.points = points;
     this.pointsFormService.resetForm(this.editForm, points);
 
-    this.usersSharedCollection = this.userService.addUserToCollectionIfMissing<IUser>(this.usersSharedCollection, points.manytoone);
+    this.usersSharedCollection = this.userService.addUserToCollectionIfMissing<IUser>(this.usersSharedCollection, points.user);
   }
 
   protected loadRelationshipsOptions(): void {
     this.userService
       .query()
       .pipe(map((res: HttpResponse<IUser[]>) => res.body ?? []))
-      .pipe(map((users: IUser[]) => this.userService.addUserToCollectionIfMissing<IUser>(users, this.points?.manytoone)))
+      .pipe(map((users: IUser[]) => this.userService.addUserToCollectionIfMissing<IUser>(users, this.points?.user)))
       .subscribe((users: IUser[]) => (this.usersSharedCollection = users));
   }
 }

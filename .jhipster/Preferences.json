@@ -1,0 +1,32 @@
+{
+  "annotations": {
+    "changelogDate": "20240904060620"
+  },
+  "applications": ["jhipster101"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "weekelygoal",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "weightunits",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Preferences",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "id": false,
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "preferences",
+      "relationshipName": "manytoone",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}
